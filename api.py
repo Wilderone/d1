@@ -209,7 +209,7 @@ def task():
 
 if __name__ == "__main__":
     if len(sys.argv) <= 1:
-        print ('Параметры запуска\n 1. python api.py - вывод справки\n 2. python api.py read - вывод списка задач \n 3. python api.py update - обновление количества задач в списке \n 4. python api.py task- создание\редактирование\удаление\перемещение задачи \n 5. python api.py create_create_list {name} - создание колонки')
+        print ('Параметры запуска\n 1. python api.py - вывод справки\n 2. python api.py read - вывод списка задач \n 3. python api.py update - обновление количества задач в списке \n 4. python api.py task- создание\редактирование\удаление\перемещение задачи \n 5. python api.py create_list {name} - создание колонки')
     elif sys.argv[1] == 'read':
         read()
     elif sys.argv[1] == 'update':
