@@ -86,7 +86,12 @@ def check_task_name(name):
 
 
 def create_list (name):
-    requests.post(base_url.format('boards')+ '/' + board_id + '/lists', data={'name': name, **auth_params})
+    result = requests.post(base_url.format('boards')+ '/' + board_id + '/lists', data={'name': name, **auth_params})
+    if result:
+        print('Колонка {} успешно добавлена.'.format(name))
+    else:
+        print('Что-то пошло не так - {}'.format(result))
+    update()
 
 
 def update():
@@ -209,7 +214,7 @@ def task():
 
 if __name__ == "__main__":
     if len(sys.argv) <= 1:
-        print ('Параметры запуска\n 1. python api.py - вывод справки\n 2. python api.py read - вывод списка задач \n 3. python api.py update - обновление количества задач в списке \n 4. python api.py task- создание\редактирование\удаление\перемещение задачи \n 5. python api.py create_list {name} - создание колонки')
+        print ('Параметры запуска\n 1. python api.py - вывод справки\n 2. python api.py read - вывод списка задач \n 3. python api.py update - обновление количества задач в списке \n 4. python api.py task- создание\редактирование\удаление\перемещение задачи \n 5. python api.py create_create_list {name} - создание колонки')
     elif sys.argv[1] == 'read':
         read()
     elif sys.argv[1] == 'update':
@@ -217,6 +222,7 @@ if __name__ == "__main__":
     elif sys.argv[1] == 'task':
         task()
     elif sys.argv[1] == 'create_list':
-        create_list(sys.argv[2], sys.argv[3])
+        create_list(sys.argv[2])
+
 
 
