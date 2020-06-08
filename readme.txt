@@ -3,4 +3,4 @@
  2. python api.py read - вывод списка задач
  3. python api.py update - обновление количества задач в списке
  4. python api.py task- создание\редактирование\удаление\перемещение задачи
- 5. python api.py create_create_list {name} - создание колонки
+ 5. python api.py create_list {name} - создание колонки
