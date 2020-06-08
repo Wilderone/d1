@@ -215,7 +215,7 @@ if __name__ == "__main__":
     elif sys.argv[1] == 'update':
         update()
     elif sys.argv[1] == 'task':
-        task(sys.argv[2], sys.argv[3])
+        task()
     elif sys.argv[1] == 'create_list':
         create_list(sys.argv[2], sys.argv[3])
 
